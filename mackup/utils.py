@@ -200,15 +200,7 @@ def get_dropbox_folder_location():
     Returns:
         (str) Full path to the current Dropbox folder
     """
-    host_db_path = os.path.join(os.environ['HOME'], '.dropbox/host.db')
-    try:
-        with open(host_db_path, 'r') as f_hostdb:
-            data = f_hostdb.read().split()
-    except IOError:
-        error("Unable to find your Dropbox install =(")
-    dropbox_home = base64.b64decode(data[1])
-
-    return dropbox_home
+    return "/cygdrive/c/Users/hwan/Dropbox"
 
 
 def get_google_drive_folder_location():
